@@ -76,11 +76,9 @@ exports.forgetPassword = catchAsyncError(async (req, res, next) => {
 
   await user.save({ validateBeforeSave: false });
 
-  const resetPasswordUrl = `${req.protocol}://${req.get(
-    "host"
-  )}/api/v1/password/reset/${resetToken}`;
+  const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
 
-  const message = `Your password reset Token is :- \n\n ${resetPasswordUrl} \n\n if you have not requested this email then please ignore it`;
+  const message = `Your password reset Token is SSFS :- \n\n ${resetPasswordUrl} \n\n if you have not requested this email then please ignore it`;
 
   try {
     await sendEmail({
@@ -91,7 +89,7 @@ exports.forgetPassword = catchAsyncError(async (req, res, next) => {
     res.status(200).json({
       success: true,
       message: `Email has been sent to ${user.email}`,
-    });
+    }); 
   } catch (error) {
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;

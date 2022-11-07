@@ -87,6 +87,16 @@ exports.getSingleProduct = catchAsyncError(async (req, res, next) => {
   });
 });
 
+// Get All Product (Admin)
+exports.getAdminProducts = catchAsyncError(async (req, res, next) => {
+  const products = await Product.find();
+
+  res.status(200).json({
+    success: true,
+    products,
+  });
+});
+
 // create a new review or update the review
 exports.createProductReview = catchAsyncError(async (req, res, next) => {
   const { rating, comment, productId } = req.body;

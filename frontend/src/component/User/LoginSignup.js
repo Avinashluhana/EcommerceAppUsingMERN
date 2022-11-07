@@ -25,8 +25,6 @@ const LoginSignup = () => {
   const alert = useAlert();
   const loginTab = useRef(null);
   const registerTab = useRef(null);
-
-
   const switcherTab = useRef(null);
   const { loading, error, isAuthenticated } = useSelector(
     (state) => state.user
@@ -34,7 +32,7 @@ const LoginSignup = () => {
   const navigate = useNavigate();
 
   const registerDataChange = (e) => {
-    if (e.target.name === "avatar") { 
+    if (e.target.name === "avatar") {
       const reader = new FileReader();
 
       reader.onload = () => {
@@ -49,6 +47,7 @@ const LoginSignup = () => {
       setUser({ ...user, [e.target.name]: e.target.value });
     }
   };
+
   const registerSubmit = (e) => {
     e.preventDefault();
 
@@ -59,12 +58,11 @@ const LoginSignup = () => {
     myForm.set("password", password);
     myForm.set("avatar", avatar);
     dispatch(register(myForm));
-    navigate("/")
+    navigate("/");
   };
   const loginSubmit = (e) => {
     e.preventDefault();
     dispatch(login(loginEmail, loginPassword));
-    navigate("/products")
   };
 
   const switchTabs = (e, tab) => {
@@ -82,21 +80,16 @@ const LoginSignup = () => {
       registerTab.current.classList.add("shiftToNeutralForm");
       loginTab.current.classList.add("shiftToLeft");
     }
-    if (tab === "custom") {
-      switcherTab.current.classList.add("shiftToRight");
-      switcherTab.current.classList.remove("shiftToNeutral");
-
-      registerTab.current.classList.add("shiftToNeutralForm");
-      loginTab.current.classList.add("shiftToLeft");
-    }
   };
+
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
-      if (isAuthenticated) {
-        navigate("/accounts");
-      }
+     
+    }
+    if (isAuthenticated) {
+      navigate("/account");
     }
   }, [dispatch, error, alert, isAuthenticated, navigate]);
   return (
@@ -111,8 +104,6 @@ const LoginSignup = () => {
                 <div className="login_signUp_toggle">
                   <p onClick={(e) => switchTabs(e, "login")}>LOGIN</p>
                   <p onClick={(e) => switchTabs(e, "register")}>REGISTER</p>
-                  <p onClick={(e) => switchTabs(e, "custom")}>Custom</p>
-
                 </div>
                 <button ref={switcherTab}></button>
               </div>

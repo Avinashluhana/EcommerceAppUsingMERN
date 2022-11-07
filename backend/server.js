@@ -24,9 +24,9 @@ cloudinary.config({
 });
 
 
-const PORT = 5000;
+const PORT = 6000;
 const server = app.listen(PORT, () => {
-  console.log(`server is working on port 5000`);
+  console.log(`server is working on port ${PORT}`);
 });
 
 // Unhandled Promise Rejection
