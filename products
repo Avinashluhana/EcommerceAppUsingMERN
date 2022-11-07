@@ -1,0 +1,425 @@
+[{
+  "_id": {
+    "$oid": "62dae1b57203f41aed2f6026"
+  },
+  "name": "APPLE CHARGER",
+  "description": "Fast Charger",
+  "price": 4500,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample url",
+      "_id": {
+        "$oid": "62dae2007203f41aed2f602b"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "Accessories",
+  "stock": 1,
+  "reviews": [
+    {
+      "name": "Vinesh Sonia",
+      "rating": 4,
+      "comment": "bhalo project ahe",
+      "_id": {
+        "$oid": "62e55ffbf677ef68cb7859ce"
+      }
+    }
+  ],
+  "createAt": {
+    "$date": "2022-07-22T17:43:17.115Z"
+  },
+  "__v": 1,
+  "ratings": 4
+},{
+  "_id": {
+    "$oid": "62db06b5b48ddfd77aad27d2"
+  },
+  "name": "Apple watch",
+  "description": "smart waatch",
+  "price": 20000,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MN1L3ref_VW_34FR+watch-45-alum-starlight-nc-7s_VW_34FR_WF_CO?wid=700&hei=700&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1645128544617%2C1631661833000",
+      "_id": {
+        "$oid": "62db06b5b48ddfd77aad27d3"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "laptop",
+  "stock": 1,
+  "reviews": [],
+  "createAt": {
+    "$date": "2022-07-22T20:21:09.508Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dd5ddc08bc6c2a44cf0354"
+  },
+  "name": "Mouce",
+  "description": "Pc's",
+  "price": 2200,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62dd5ddc08bc6c2a44cf0355"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "laptop",
+  "stock": 1,
+  "reviews": [],
+  "createAt": {
+    "$date": "2022-07-24T14:57:32.567Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dd650a717386c0ecbe9f0c"
+  },
+  "name": "Speaker",
+  "description": "Pc's",
+  "price": 2200,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62dd650a717386c0ecbe9f0d"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "laptop",
+  "stock": 1,
+  "reviews": [],
+  "createAt": {
+    "$date": "2022-07-24T15:28:10.141Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dec9c89eae5cc59333b23d"
+  },
+  "name": "product2",
+  "description": "Pc's",
+  "price": 2200,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62dec9c89eae5cc59333b23e"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "laptop",
+  "stock": 1,
+  "reviews": [],
+  "createAt": {
+    "$date": "2022-07-25T16:50:16.357Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dec9cf9eae5cc59333b240"
+  },
+  "name": "product3",
+  "description": "Pc's",
+  "price": 2200,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62dec9cf9eae5cc59333b241"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "laptop",
+  "stock": 1,
+  "reviews": [],
+  "createAt": {
+    "$date": "2022-07-25T16:50:23.956Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dec9d69eae5cc59333b243"
+  },
+  "name": "product4",
+  "description": "Pc's",
+  "price": 2200,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62dec9d69eae5cc59333b244"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "laptop",
+  "stock": 1,
+  "reviews": [],
+  "createAt": {
+    "$date": "2022-07-25T16:50:30.391Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dec9da9eae5cc59333b246"
+  },
+  "name": "product5",
+  "description": "Pc's",
+  "price": 2200,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62dec9da9eae5cc59333b247"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "laptop",
+  "stock": 1,
+  "reviews": [],
+  "createAt": {
+    "$date": "2022-07-25T16:50:34.310Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dec9df9eae5cc59333b249"
+  },
+  "name": "product6",
+  "description": "Pc's",
+  "price": 2200,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62dec9df9eae5cc59333b24a"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "laptop",
+  "stock": 1,
+  "reviews": [],
+  "createAt": {
+    "$date": "2022-07-25T16:50:39.689Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dec9e49eae5cc59333b24c"
+  },
+  "name": "product7",
+  "description": "Pc's",
+  "price": 2200,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62dec9e49eae5cc59333b24d"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "laptop",
+  "stock": 1,
+  "reviews": [],
+  "createAt": {
+    "$date": "2022-07-25T16:50:44.323Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dec9e89eae5cc59333b24f"
+  },
+  "name": "product8",
+  "description": "Pc's",
+  "price": 2200,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62dec9e89eae5cc59333b250"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "laptop",
+  "stock": 1,
+  "reviews": [],
+  "createAt": {
+    "$date": "2022-07-25T16:50:48.920Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dec9ed9eae5cc59333b252"
+  },
+  "name": "product9",
+  "description": "Pc's",
+  "price": 2200,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62dec9ed9eae5cc59333b253"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "laptop",
+  "stock": 1,
+  "reviews": [],
+  "createAt": {
+    "$date": "2022-07-25T16:50:53.519Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dec9f39eae5cc59333b255"
+  },
+  "name": "product10",
+  "description": "Pc's",
+  "price": 2200,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62dec9f39eae5cc59333b256"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "laptop",
+  "stock": 1,
+  "reviews": [],
+  "createAt": {
+    "$date": "2022-07-25T16:50:59.614Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e2cf1d5c0ec079c7a017ed"
+  },
+  "name": "sample",
+  "description": "Pc's",
+  "price": 2200,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62e2cf1d5c0ec079c7a017ee"
+      }
+    }
+  ],
+  "rating": 0,
+  "category": "laptop",
+  "stock": 1,
+  "user": {
+    "$oid": "62e2cb3c01e948e2984279c4"
+  },
+  "reviews": [],
+  "createAt": {
+    "$date": "2022-07-28T18:02:05.583Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e51ea2c28a05ad2a0fe5dd"
+  },
+  "name": "product11",
+  "description": "Pc's",
+  "price": 12000,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62e51ea2c28a05ad2a0fe5de"
+      }
+    }
+  ],
+  "ratings": 0,
+  "category": "laptop",
+  "stock": 1,
+  "user": {
+    "$oid": "62e2cb3c01e948e2984279c4"
+  },
+  "reviews": [
+    {
+      "name": "Avinash Kumar",
+      "rating": 5,
+      "comment": "wajo Product ahe",
+      "_id": {
+        "$oid": "62e51f29c28a05ad2a0fe5e2"
+      }
+    }
+  ],
+  "createAt": {
+    "$date": "2022-07-30T12:05:54.049Z"
+  },
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "62e567cdcd83dd878f3c74fe"
+  },
+  "name": "new product",
+  "description": "Pc's",
+  "price": 12000,
+  "images": [
+    {
+      "public_id": "sample Imnage",
+      "url": "sample Url",
+      "_id": {
+        "$oid": "62e567cdcd83dd878f3c74ff"
+      }
+    }
+  ],
+  "ratings": 4,
+  "category": "laptop",
+  "stock": 1,
+  "user": {
+    "$oid": "62e2cb3c01e948e2984279c4"
+  },
+  "reviews": [
+    {
+      "user": {
+        "$oid": "62e5608bf677ef68cb7859d4"
+      },
+      "name": "Umesh",
+      "rating": 4,
+      "comment": "wa wa wa ",
+      "_id": {
+        "$oid": "62e80ad99d78f5a122df791a"
+      }
+    }
+  ],
+  "createAt": {
+    "$date": "2022-07-30T17:18:05.574Z"
+  },
+  "__v": 3
+}]
