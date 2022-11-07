@@ -34,6 +34,7 @@ exports.getAllProducts = catchAsyncError(async (req, res, next) => {
   });
 });
 
+
 // Update products == admin
 
 exports.updateProduct = catchAsyncError(async (req, res, next) => {

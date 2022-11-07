@@ -73,7 +73,6 @@ const App = () => {
             {isAuthenticated && user.role === "admin" && (
               <Route path="/shipping" element={<Shipping />} exact />
             )}
-            <Route path="/admin/products" element={<ProductList />} exact />
 
             <Route path="/password/update" element={<UpdatePassword />} exact />
             <Route path="/order/confirm" element={<ConfirmOrder />} exact />
@@ -91,13 +90,14 @@ const App = () => {
             <Route path="/success" element={<OrderSuccess />} exact />
             <Route path="/orders" element={<MyOrders />} exact />
             <Route path="/order/:id" element={<OrderDetails />} exact />
-            <Route path="/admin/orders" element={<Dashboard />} exact />
-            <Route path="/admin/users" element={<Dashboard />} exact />
+
           </Route>
           {/* admin Routes */}
 
           <Route element={<ProtectedRoute isAdmin={true} />}>
             <Route path="/admin/dashboard" element={<Dashboard />} exact />
+            <Route path="/admin/products" element={<ProductList />} exact />
+
           </Route>
 
           <Route path="/password/forgot" element={<ForgotPassword />} exact />
