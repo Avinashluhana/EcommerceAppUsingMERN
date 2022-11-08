@@ -4,6 +4,7 @@ import "./productList.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
   clearErrors,
+  deleteProduct,
   getAdminProduct,
 } from "../../Redux/actions/productAction";
 import { Link, useNavigate } from "react-router-dom";
@@ -22,13 +23,13 @@ const ProductList = () => {
 
   const { error, products } = useSelector((state) => state.products);
 
-  //   const { error: deleteError, isDeleted } = useSelector(
-  //     (state) => state.product
-  //   );
+    const { error: deleteError, isDeleted } = useSelector(
+      (state) => state.product
+    );
 
-  //   const deleteProductHandler = (id) => {
-  //     dispatch(deleteProduct(id));
-  //   };
+    const deleteProductHandler = (id) => {
+      dispatch(deleteProduct(id));
+    };
 
   useEffect(() => {
     if (error) {
@@ -36,19 +37,19 @@ const ProductList = () => {
       dispatch(clearErrors());
     }
 
-    // if (deleteError) {
-    //   alert.error(deleteError);
-    //   dispatch(clearErrors());
-    // }
+    if (deleteError) {
+      alert.error(deleteError);
+      dispatch(clearErrors());
+    }
 
-    // if (isDeleted) {
-    //   alert.success("Product Deleted Successfully");
-    //   navigate("/admin/dashboard");
-    //   dispatch({ type: DELETE_PRODUCT_RESET });
-    // }
+    if (isDeleted) {
+      alert.success("Product Deleted Successfully");
+      navigate("/admin/dashboard");
+      dispatch({ type: DELETE_PRODUCT_RESET });
+    }
 
     dispatch(getAdminProduct());
-  }, [dispatch, alert, error, navigate]);
+  }, [dispatch, alert, error, navigate, isDeleted, deleteError]);
 
   const columns = [
     { field: "id", headerName: "Product ID", minWidth: 200, flex: 0.5 },
@@ -90,9 +91,9 @@ const ProductList = () => {
             </Link>
 
             <Button
-            //   onClick={() =>
-            //     deleteProductHandler(params.getValue(params.id, "id"))
-            //   }
+              onClick={() =>
+                deleteProductHandler(params.getValue(params.id, "id"))
+              }
             >
               <DeleteIcon />
             </Button>

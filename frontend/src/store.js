@@ -8,6 +8,7 @@ import {
   newReviewReducer,
   productDetailsReducer,
   productReducer,
+  productsReducer,
 } from "./Redux/reducer/productReducer";
 import {
   profileReducer,
@@ -22,9 +23,10 @@ import {
 } from "./Redux/reducer/orderReducer";
 
 const reducer = combineReducers({
-  products: productReducer,
+  products: productsReducer,
   productDetails: productDetailsReducer,
   newProduct: newProductReducer,
+  product: productReducer,
   user: userReducer,
   profile: profileReducer,
   forgotPassword: forgotPassword,
