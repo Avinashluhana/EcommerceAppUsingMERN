@@ -23,13 +23,13 @@ const ProductList = () => {
 
   const { error, products } = useSelector((state) => state.products);
 
-    const { error: deleteError, isDeleted } = useSelector(
-      (state) => state.product
-    );
+  const { error: deleteError, isDeleted } = useSelector(
+    (state) => state.product
+  );
 
-    const deleteProductHandler = (id) => {
-      dispatch(deleteProduct(id));
-    };
+  const deleteProductHandler = (id) => {
+    dispatch(deleteProduct(id));
+  };
 
   useEffect(() => {
     if (error) {
