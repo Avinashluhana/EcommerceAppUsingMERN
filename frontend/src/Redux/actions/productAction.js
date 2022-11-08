@@ -9,7 +9,7 @@ import {
   NEW_REVIEW_REQUEST,
   NEW_REVIEW_SUCCESS,
   NEW_REVIEW_FAIL,
-  ADMIN_PRODUCT_REQUEST,
+  ADMIN_PRODUCT_REQUEST, 
   ADMIN_PRODUCT_SUCCESS,
   ADMIN_PRODUCT_FAIL,
   NEW_PRODUCT_REQUEST,
@@ -72,7 +72,7 @@ export const createProduct = (productData) => async (dispatch) => {
       productData,
       config
     );
-      
+
     dispatch({
       type: NEW_PRODUCT_SUCCESS,
       payload: data,
