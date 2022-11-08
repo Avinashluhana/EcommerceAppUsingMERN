@@ -45,9 +45,7 @@ const ProductDetails = () => {
     dispatch(addItemsToCart(params.id, quantity));
     alert.success("Item added to Cart");
   };
-  const { success, error: reviewError } = useSelector(
-    (state) => state.review
-  );
+  const { success, error: reviewError } = useSelector((state) => state.review);
 
   const reviewSubmitHandler = () => {
     const myForm = new FormData();
@@ -152,7 +150,9 @@ const ProductDetails = () => {
                 Description : <p>{product.description}</p>
               </div>
 
-              <button onClick={submitReviewToggle} className="submitReview">Submit Review</button>
+              <button onClick={submitReviewToggle} className="submitReview">
+                Submit Review
+              </button>
             </div>
           </div>
           <h3 className="reviewsHeading">REVIEWS</h3>
