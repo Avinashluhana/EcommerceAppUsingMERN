@@ -17,9 +17,11 @@ import {
 } from "./Redux/reducer/userReducer";
 import { cartReducer } from "./Redux/reducer/cartReducer";
 import {
+  allOrdersReducer,
   myOrdersReducer,
   newOrderReducer,
   orderDetailsReducer,
+  orderReducer,
 } from "./Redux/reducer/orderReducer";
 
 const reducer = combineReducers({
@@ -35,6 +37,8 @@ const reducer = combineReducers({
   newOrder: newOrderReducer,
   myOrders: myOrdersReducer,
   orderDetails: orderDetailsReducer,
+  allOrders: allOrdersReducer,
+  order: orderReducer,
 
 });
 
