@@ -89,7 +89,7 @@ exports.forgetPassword = catchAsyncError(async (req, res, next) => {
     res.status(200).json({
       success: true,
       message: `Email has been sent to ${user.email}`,
-    }); 
+    });
   } catch (error) {
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;
@@ -258,6 +258,9 @@ exports.deleteUser = catchAsyncError(async (req, res, next) => {
       new ErrorHandler(`User doesn't exits with id ${req.params.id}`)
     );
   }
+  const imageId = user.avatar.public_id;
+
+  await cloudinary.v2.uploader.destroy(imageId);
   await user.remove();
   const message = `${user.name} User has been deleted`;
   res.status(200).json({
