@@ -139,7 +139,7 @@ const ProcessOrder = () => {
                           <img src={item.image} alt="Product" />
                           <Link to={`/product/${item.product}`}>
                             {item.name}
-                          </Link>{" "}
+                          </Link>
                           <span>
                             {item.quantity} X ₹{item.price} ={" "}
                             <b>₹{item.price * item.quantity}</b>
