@@ -23,7 +23,7 @@ const Dashboard = () => {
 
   const { orders } = useSelector((state) => state.allOrders);
 
-  // const { users } = useSelector((state) => state.allUsers);
+  const { users } = useSelector((state) => state.allUsers);
 
   let outOfStock = 0;
 
@@ -92,7 +92,7 @@ const Dashboard = () => {
             </Link>
             <Link to="/admin/users">
               <p>Users</p>
-              {/* <p>{users && users.length}</p> */}
+              <p>{users && users.length}</p>
             </Link>
           </div>
         </div>
