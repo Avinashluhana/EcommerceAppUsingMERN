@@ -100,7 +100,7 @@ const ProductDetails = () => {
 
           <div className="ProductDetails">
             <div>
-              <Carousel>
+              <Carousel className="carousel">
                 {product.images &&
                   product.images.map((item, i) => (
                     <img

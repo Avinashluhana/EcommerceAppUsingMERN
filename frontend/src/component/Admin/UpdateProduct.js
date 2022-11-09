@@ -1,7 +1,10 @@
 import React, { Fragment, useEffect, useState } from "react";
-import "./newProduct.css";
 import { useSelector, useDispatch } from "react-redux";
-import { clearErrors, createProduct } from "../../Redux/actions/productAction";
+import {
+  clearErrors,
+  updateProduct,
+  getProductDetails,
+} from "../../Redux/actions/productAction";
 import { useAlert } from "react-alert";
 import { Button } from "@material-ui/core";
 import MetaData from "../layout/MetaData";
@@ -11,15 +14,21 @@ import StorageIcon from "@material-ui/icons/Storage";
 import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import SideBar from "./Sidebar";
-import { NEW_PRODUCT_RESET } from "../../Redux/constants/productConstants";
-import { useNavigate } from "react-router-dom";
+import { UPDATE_PRODUCT_RESET } from "../../Redux/constants/productConstants";
+import { useNavigate, useParams } from "react-router-dom";
 
-const NewProduct = () => {
+const UpdateProduct = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
+  const params = useParams();
   const navigate = useNavigate();
+  const { error, product } = useSelector((state) => state.productDetails);
 
-  const { loading, error, success } = useSelector((state) => state.newProduct);
+  const {
+    loading,
+    error: updateError,
+    isUpdated,
+  } = useSelector((state) => state.product);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
@@ -27,6 +36,7 @@ const NewProduct = () => {
   const [category, setCategory] = useState("");
   const [stock, setStock] = useState(0);
   const [images, setImages] = useState([]);
+  const [oldImages, setOldImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
   const categories = [
@@ -37,44 +47,77 @@ const NewProduct = () => {
     "Attire",
     "Camera",
     "SmartPhones",
-    "Wears",
   ];
 
+  const productId = params.id;
   useEffect(() => {
+    if (product && product._id !== productId) {
+      dispatch(getProductDetails(productId));
+    } else {
+      setName(product.name);
+      setDescription(product.description);
+      setPrice(product.price);
+      setCategory(product.category);
+      setStock(product.stock);
+      setOldImages(product.images);
+    }
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
 
-    if (success) {
-      alert.success("Product Created Successfully");
-      navigate("/admin/dashboard");
-      dispatch({ type: NEW_PRODUCT_RESET });
+    if (updateError) {
+      alert.error(updateError);
+      dispatch(clearErrors());
     }
-  }, [dispatch, alert, error, navigate, success]);
 
-  const createProductSubmitHandler = (e) => {
+    if (isUpdated) {
+      alert.success("Product Updated Successfully");
+      navigate("/admin/products");
+      dispatch({ type: UPDATE_PRODUCT_RESET });
+    }
+  }, [
+    dispatch,
+    alert,
+    error,
+    navigate,
+    isUpdated,
+    productId,
+    product,
+    updateError,
+  ]);
+
+  const updateProductSubmitHandler = (e) => {
     e.preventDefault();
 
     const myForm = new FormData();
+const userData = {
+    name,
+    price,
+    description,
+    category,
+    stock
 
-    myForm.set("name", name);
-    myForm.set("price", price);
-    myForm.set("description", description);
-    myForm.set("category", category);
-    myForm.set("stock", stock);
+}
+    // myForm.set("name", name);
+    // myForm.set("price", price);
+    // myForm.set("description", description);
+    // myForm.set("category", category);
+    // myForm.set("stock", stock);
 
-    images.forEach((image) => {
-      myForm.append("images", image);
-    });
-    dispatch(createProduct(myForm));
+    // images.forEach((image) => {
+    //   myForm.append("images", image);
+    // });
+    console.log("neew data", userData)
+    dispatch(updateProduct(productId, userData));
   };
 
-  const createProductImagesChange = (e) => {
+  const updateProductImagesChange = (e) => {
     const files = Array.from(e.target.files);
 
     setImages([]);
     setImagesPreview([]);
+    setOldImages([]);
 
     files.forEach((file) => {
       const reader = new FileReader();
@@ -99,7 +142,7 @@ const NewProduct = () => {
           <form
             className="createProductForm"
             encType="multipart/form-data"
-            onSubmit={createProductSubmitHandler}
+            onSubmit={updateProductSubmitHandler}ß
           >
             <h1>Create Product</h1>
 
@@ -120,6 +163,7 @@ const NewProduct = () => {
                 placeholder="Price"
                 required
                 onChange={(e) => setPrice(e.target.value)}
+                value={price}
               />
             </div>
 
@@ -137,7 +181,10 @@ const NewProduct = () => {
 
             <div>
               <AccountTreeIcon />
-              <select onChange={(e) => setCategory(e.target.value)}>
+              <select
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+              >
                 <option value="">Choose Category</option>
                 {categories.map((cate) => (
                   <option key={cate} value={cate}>
@@ -154,6 +201,7 @@ const NewProduct = () => {
                 placeholder="Stock"
                 required
                 onChange={(e) => setStock(e.target.value)}
+                value={stock}
               />
             </div>
 
@@ -162,9 +210,16 @@ const NewProduct = () => {
                 type="file"
                 name="avatar"
                 accept="image/*"
-                onChange={createProductImagesChange}
+                onChange={updateProductImagesChange}
                 multiple
               />
+            </div>
+
+            <div id="createProductFormImage">
+              {oldImages &&
+                oldImages.map((image, index) => (
+                  <img key={index} src={image.url} alt="Old Product Preview" />
+                ))}
             </div>
 
             <div id="createProductFormImage">
@@ -187,4 +242,4 @@ const NewProduct = () => {
   );
 };
 
-export default NewProduct;
+export default UpdateProduct;
