@@ -45,7 +45,7 @@ const ProductDetails = () => {
     dispatch(addItemsToCart(params.id, quantity));
     alert.success("Item added to Cart");
   };
-  const { success, error: reviewError } = useSelector((state) => state.review);
+  const { success, error: reviewError } = useSelector((state) => state.newReview);
 
   const reviewSubmitHandler = () => {
     const myForm = new FormData();

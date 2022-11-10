@@ -10,6 +10,7 @@ import {
   productReducer,
   productReviewsReducer,
   productsReducer,
+  reviewReducer,
 } from "./Redux/reducer/productReducer";
 import {
   profileReducer,
@@ -36,7 +37,7 @@ const reducer = combineReducers({
   profile: profileReducer,
   forgotPassword: forgotPassword,
   cart: cartReducer,
-  review: newReviewReducer,
+  newReview: newReviewReducer,
   newOrder: newOrderReducer,
   myOrders: myOrdersReducer,
   orderDetails: orderDetailsReducer,
@@ -44,7 +45,8 @@ const reducer = combineReducers({
   order: orderReducer,
   allUsers: allUsersReducer,
   userDetails: userDetailsReducer,
-  productReviews: productReviewsReducer
+  productReviews: productReviewsReducer,
+  review: reviewReducer,
 
 });
 
