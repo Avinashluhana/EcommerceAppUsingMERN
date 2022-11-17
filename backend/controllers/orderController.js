@@ -9,7 +9,7 @@ const Product = require("../models/productModel");
 exports.newOrder = catchAsyncError(async (req, res, next) => {
   const {
     shippingInfo,
-    oderItems,
+    orderItems,
     paymentInfo,
     itemPrice,
     taxPrice,
@@ -19,7 +19,7 @@ exports.newOrder = catchAsyncError(async (req, res, next) => {
 
   const order = await Order.create({
     shippingInfo,
-    oderItems,
+    orderItems,
     paymentInfo,
     itemPrice,
     taxPrice,
@@ -90,11 +90,11 @@ exports.UpdateOrder = catchAsyncError(async (req, res, next) => {
   if (order.orderStatus === "Delivered") {
     return next(new ErrorHandler("Order already has been delivered", 400));
   }
+  if (req.body.status === "Shipped") {
     order.orderItems.forEach(async (o) => {
       await updateStock(o.product, o.quantity);
     });
-
-  
+  }
 
   order.orderStatus = req.body.status;
 
