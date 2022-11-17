@@ -4,7 +4,7 @@ import Header from "./component/layout/Header/Header";
 import WebFont from "webfontloader";
 import Footer from "./component/layout/Footer/Footer";
 import Home from "./component/Home/Home";
-  import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import About from "./component/About/About";
 import ProductDetails from "./component/Product/ProductDetails";
 import Products from "./component/Product/Products";
@@ -40,6 +40,7 @@ import ProcessOrder from "./component/Admin/ProcessOrder";
 import UsersList from "./component/Admin/UserList";
 import UpdateUser from "./component/Admin/UpdateUser";
 import ProductReviews from "./component/Admin/ProductReviews";
+import NotFound from "./component/layout/NotFound/NotFound";
 
 const App = () => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -60,6 +61,9 @@ const App = () => {
     store.dispatch(loadUser());
     getStripeApiKey();
   }, []);
+
+  // no one can inspect the site
+  window.addEventListener("contextmenu", (e) => e.preventDefault());
 
   return (
     <div className="App">
@@ -116,6 +120,7 @@ const App = () => {
             <Route path="/admin/user/:id" element={<UpdateUser />} exact />
             <Route path="/admin/reviews" element={<ProductReviews />} exact />
           </Route>
+          <Route path="*" element={<NotFound />} />
 
           <Route path="/password/forgot" element={<ForgotPassword />} exact />
           <Route
