@@ -20,7 +20,7 @@ const OrderList = () => {
   const dispatch = useDispatch();
 
   const alert = useAlert();
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const { error, orders } = useSelector((state) => state.allOrders);
 
   const { error: deleteError, isDeleted } = useSelector((state) => state.order);
@@ -121,7 +121,6 @@ const OrderList = () => {
   return (
     <Fragment>
       <MetaData title={`ALL ORDERS - Admin`} />
-
       <div className="dashboard">
         <SideBar />
         <div className="productListContainer">

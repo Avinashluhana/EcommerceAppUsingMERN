@@ -6,10 +6,8 @@ import { Link } from "react-router-dom";
 import { Doughnut, Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 
-// import { useSelector, useDispatch } from "react-redux";
-// import { getAdminProduct } from "../../Redux/actions/productAction";
-// import { getAllOrders } from "../../Redux/actions/orderAction";
-// import { getAllUsers } from "../../Redux/actions/userAction";
+import { getAllOrders } from "../../Redux/actions/orderAction";
+import { getAllUsers } from "../../Redux/actions/userAction";
 import MetaData from "../layout/MetaData";
 import { useDispatch, useSelector } from "react-redux";
 import { getAdminProduct } from "../../Redux/actions/productAction.js";
@@ -36,15 +34,15 @@ const Dashboard = () => {
 
   useEffect(() => {
     dispatch(getAdminProduct());
-    // dispatch(getAllOrders());
-    // dispatch(getAllUsers());
+    dispatch(getAllOrders());
+    dispatch(getAllUsers());
   }, [dispatch]);
 
-  // let totalAmount = 0;
-  // orders &&
-  //   orders.forEach((item) => {
-  //     totalAmount += item.totalPrice;
-  //   });
+  let totalAmount = 0;
+  orders &&
+    orders.forEach((item) => {
+      totalAmount += item.totalPrice;
+    });
 
   const lineState = {
     labels: ["Initial Amount", "Amount Earned"],
@@ -79,7 +77,7 @@ const Dashboard = () => {
 
         <div className="dashboardSummary">
           <div>
-            <p>{/* Total Amount <br /> ₹{totalAmount} */}</p>
+            <p>Total Amount <br /> Rs{totalAmount}</p>
           </div>
           <div className="dashboardSummaryBox2">
             <Link to="/admin/products">
