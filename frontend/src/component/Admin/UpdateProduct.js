@@ -90,7 +90,6 @@ const UpdateProduct = () => {
   const updateProductSubmitHandler = (e) => {
     e.preventDefault();
 
-    const myForm = new FormData();
 const userData = {
     name,
     price,
