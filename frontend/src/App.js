@@ -63,7 +63,7 @@ const App = () => {
   }, []);
 
   // no one can inspect the site
-  window.addEventListener("contextmenu", (e) => e.preventDefault());
+  // window.addEventListener("contextmenu", (e) => e.preventDefault());
 
   return (
     <div className="App">
