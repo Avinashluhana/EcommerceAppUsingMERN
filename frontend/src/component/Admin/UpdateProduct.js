@@ -135,7 +135,7 @@ const userData = {
 
   return (
     <Fragment>
-      <MetaData title="Create Product" />
+      <MetaData title="Update Product" />
       <div className="dashboard">
         <SideBar />
         <div className="newProductContainer">
@@ -144,7 +144,7 @@ const userData = {
             encType="multipart/form-data"
             onSubmit={updateProductSubmitHandler}ß
           >
-            <h1>Create Product</h1>
+            <h1>Update Product</h1>
 
             <div>
               <SpellcheckIcon />
@@ -233,7 +233,7 @@ const userData = {
               type="submit"
               disabled={loading ? true : false}
             >
-              Create
+              Update
             </Button>
           </form>
         </div>
