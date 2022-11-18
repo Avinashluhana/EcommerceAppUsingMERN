@@ -1,6 +1,7 @@
 {
   "name": "ecommerce",
   "version": "1.0.0",
+  "engine": "16.17.0",
   "description": "",
   "main": "backend/server.js",
   "scripts": {
