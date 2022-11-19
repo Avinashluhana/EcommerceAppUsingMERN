@@ -154,7 +154,6 @@ export const getProductDetails = (id) => async (dispatch) => {
       type: PRODUCT_DETAILS_FAIL,
       payload: error.response.data.message,
     });
-    console.log(error);
   }
 };
 

@@ -107,7 +107,6 @@ const userData = {
     // images.forEach((image) => {
     //   myForm.append("images", image);
     // });
-    console.log("neew data", userData)
     dispatch(updateProduct(productId, userData));
   };
 
