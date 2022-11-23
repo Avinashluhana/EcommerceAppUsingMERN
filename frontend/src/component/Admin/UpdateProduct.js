@@ -90,24 +90,18 @@ const UpdateProduct = () => {
   const updateProductSubmitHandler = (e) => {
     e.preventDefault();
 
-const userData = {
-    name,
-    price,
-    description,
-    category,
-    stock
+    const myForm = new FormData();
 
-}
-    // myForm.set("name", name);
-    // myForm.set("price", price);
-    // myForm.set("description", description);
-    // myForm.set("category", category);
-    // myForm.set("stock", stock);
+    myForm.set("name", name);
+    myForm.set("price", price);
+    myForm.set("description", description);
+    myForm.set("category", category);
+    myForm.set("stock", stock);
 
-    // images.forEach((image) => {
-    //   myForm.append("images", image);
-    // });
-    dispatch(updateProduct(productId, userData));
+    images.forEach((image) => {
+      myForm.append("images", image);
+    });
+    dispatch(updateProduct(productId, myForm));
   };
 
   const updateProductImagesChange = (e) => {
@@ -140,7 +134,8 @@ const userData = {
           <form
             className="createProductForm"
             encType="multipart/form-data"
-            onSubmit={updateProductSubmitHandler}ß
+            onSubmit={updateProductSubmitHandler}
+            ß
           >
             <h1>Update Product</h1>
 

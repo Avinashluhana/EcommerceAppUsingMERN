@@ -14,12 +14,10 @@ const options = {
 };
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
   <Provider store={store}>
     <AlertProvider template={AlertTemplate} {...options}>
       <App />
     </AlertProvider>
   </Provider>
-  </React.StrictMode>
 );
 reportWebVitals();

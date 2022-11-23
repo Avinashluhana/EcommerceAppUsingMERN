@@ -8,11 +8,12 @@ const ProtectedRoute = ({isAdmin}) => {
   return (
     <Fragment>
       {loading ===false &&
-        (isAuthenticated === false ? <Navigate to="login" /> : <Outlet />)  
+        (isAuthenticated === false  && isAdmin === false && user.role !== "admin" ? <Navigate to="login" /> : <Outlet />)  
+
         }
-        {loading ===false &&
+        {/* {loading ===false &&
         (isAdmin === true && user.role !== "admin" ? <Navigate to="login" /> : <Outlet />)  
-        }
+        } */}
     </Fragment>
   );
 };

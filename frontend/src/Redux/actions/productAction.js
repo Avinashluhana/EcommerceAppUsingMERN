@@ -121,7 +121,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
     };
 
-    const { data } = await axios.delete(
+    const { data } = await axios.put(
       `/api/v1/admin/product/${id}`,
       productData,
       config,

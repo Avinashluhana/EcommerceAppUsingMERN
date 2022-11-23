@@ -71,7 +71,6 @@ const App = () => {
         <Header />
         {isAuthenticated && <UserOptions user={user} />}
         <Routes>
-          <Route path="/" element={<Home />} exact />
           <Route path="/about" element={<About />} exact />
           <Route path="/product/:id" element={<ProductDetails />} exact />
           <Route path="/products" element={<Products />} exact />
@@ -79,6 +78,8 @@ const App = () => {
           <Route path="/search" element={<Search />} />
           <Route path="/login" element={<LoginSignup />} exact />
           <Route element={<ProtectedRoute />}>
+          <Route path="/" element={<Home />} exact />
+
             <Route path="/account" element={<Profile />} exact />
 
             <Route path="/me/update" element={<UpdateProfile />} exact />
